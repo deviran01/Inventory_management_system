@@ -1,0 +1,126 @@
+
+a:hover {
+    text-decoration: none;
+    color: unset;
+}
+
+a {
+    color: unset;
+}
+
+
+
+@font-face {
+    font-family: 'iransansweb';
+    src: url('fonts/IRANSansWeb.eot') format('eot'),
+    url('fonts/IRANSansWeb.woff') format('woff'),
+    url('fonts/IRANSansWeb.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+body {
+    padding: 0;
+    background-color: #f3f3f3;
+    margin: 0;
+    height: 100%;
+    color: #635f5f;
+    font-family: 'iransansweb';
+}
+
+/* small */
+@media (max-width: 767.98px) {
+
+    .box-welcome {
+        border-radius: 0 0 0 0 !important;
+    }
+}
+
+
+.box-main {
+    margin: 40px auto 30px;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 0 3px 2px #e7e7e7;
+    border-radius: 5px;
+}
+
+
+#form-login {
+    width: 86%;
+}
+
+.links {
+    font-size: 10pt;
+    color: #7f7f7f;
+    transition: font-size 0.4s;
+}
+
+.links:hover {
+    font-size: 10.1pt;
+    color: #5c5c5c;
+}
+
+#site-logo {
+    width: 55%;
+    margin-top: 15px;
+}
+
+.box-welcome {
+    text-align: center;
+    padding: 12px 8px;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0 0 0 5px;
+}
+
+.box-welcome h4 {
+    font-size: 15pt;
+}
+
+.description {
+    font-size: 12pt;
+    color: #848484;
+}
+
+#mymodal .modal-content {
+    overflow: hidden;
+}
+
+.modal-head {
+    padding: 10px;
+    position: relative;
+}
+
+.modal-head-forget {
+    background-color: #15acc4;
+}
+.modal-head-reg {
+    background-color: #31b34f;
+}
+
+.modal-head .title {
+    color: #fff;
+    font-size: 13pt;
+    text-align: right;
+    margin: 0;
+}
+.modal-head .icon-status {
+    color: #ffffff;
+    position: absolute;
+    top: 9px;
+    left: 13px;
+    font-size: 15pt;
+    cursor: pointer
+}
+
+#pass-type-changer {
+    position: absolute;
+    right: 5px;
+    top: 33px;
+    font-size: 15pt;
+    color: #bbbbbb;
+    padding: 5px;
+	cursor: pointer;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/svg/site-logo.svg">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-login.css">
+    <link rel="stylesheet" type="text/css" href="css/icons-fontawesome.css">
+
+
+    <title>ورود</title>
+</head>
+<body>
+
+<div class="container box-main">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 d-none d-lg-block d-md-block text-center">
+
+            <img id="site-logo" src="imgs/png/main-logo.jpg"/>
+            <p class="lead mt-2 description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Asperiores at consectetur culpa doloribus eum facere, ipsa
+            </p>
+
+        </div>
+        <div class="col-lg-6 col-md-6 p-2">
+
+            <div class="m-n2 alert alert-warning box-welcome">
+                <h4 class="mb-0">
+                    به سامانه مدیریت انبار داری خوش آمدید
+                </h4>
+            </div>
+
+            <form id="form-login" class="p-1 p-md-0 mx-auto mb-2 mt-4" action="#login" method="post">
+                <span id="modal-start" class="d-none" data-toggle="modal" data-target="#mymodal"></span>
+                <div class="mb-3">
+                    <label class="d-block text-right mb-1">نام کاربری</label>
+                    <input type="text" class="form-control"/>
+                </div>
+                <div class="mb-4">
+                    <label class="d-block text-right mb-1 position-relative">
+                        کلمه عبور
+                        <i class="far fa-eye" id="pass-type-changer"></i>
+                    </label>
+                    <input id="input-pass" type="password" class="form-control">
+                </div>
+                <div>
+                    <button class="btn btn-warning btn-block">ورود به حساب کاربری</button>
+                </div>
+                <div class="mt-4 text-left">
+                    <a id="link-forgetpass" class="links" href="#forgetpass" onclick="showModal('forget');">کلمه عبور
+                        خود را فراموش کرده اید؟</a>
+                </div>
+                <div class="mt-1 text-left">
+                    <a id="link-register" class="links" href="#register" onclick="showModal('reg');">ثبت نام کنید</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="mymodal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!--            header -->
+            <div class="modal-head">
+                <h5 class="title"></h5>
+                <i class="fa fa-times icon-status" data-dismiss="modal"></i>
+            </div>
+
+            <!--            body-forget -->
+            <div id="modal-body-forget" class="p-2 mt-2">
+                <p class="text-right mb-1">
+                    لطفا ایمیلی را که با آن ثبت نام کرده اید را وارد نمایید
+                </p>
+                <input type="email" class="form-control" placeholder="esample@email.com">
+                <div class="mt-4 text-right">
+                    <button class="btn btn-light border mr-2" data-dismiss="modal">انصراف</button>
+                    <button class="btn btn-info">بازیابی کلمه عبور</button>
+                </div>
+            </div>
+
+            <!--            body-register -->
+            <div id="modal-body-register" class="px-3 mb-2 mt-4">
+                <form action="#reg" method="post">
+                    <div class="mb-3">
+                        <label class="d-block text-right mb-1">
+                            ایمیل
+                        </label>
+                        <input class="form-control" type="email" placeholder="example@gmail.com"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-block text-right mb-1">
+                            کلمه عبور
+                        </label>
+                        <input class="form-control" type="password" placeholder=""/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-block text-right mb-1">
+                            تکرار کلمه عبور
+                        </label>
+                        <input class="form-control" type="password" placeholder=""/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-block text-right mb-1">
+                            همراه
+                        </label>
+                        <input class="form-control" type="number" placeholder="09*********"/>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-light border mr-2">انصراف</button>
+                        <button class="btn btn-success">ثبت نام</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    // hide show pass
+    $("#pass-type-changer").on("click", function () {
+
+        let pass_hide = "far fa-eye-slash";
+        let pass_show = "far fa-eye";
+        let inpType = $("#input-pass").attr("type");
+
+
+        if (inpType === "password") {
+            // type is pass
+            $("#input-pass").attr("type", "text");
+            $(this).attr("class", pass_hide);
+
+        } else {
+            // type is text
+            $("#input-pass").attr("type", "password");
+            $(this).attr("class", pass_show);
+        }
+    });
+
+    function showModal(aType) {
+        $("#modal-body-register").hide();
+        $("#modal-body-forget").hide();
+
+        if (aType == "forget") {
+            // forget pass
+            $("#mymodal").find(".modal-head").attr("class", "modal-head modal-head-forget");
+            $("#mymodal").find(".title").text("فراموشی کلمه عبور");
+            $("#modal-body-forget").show();
+
+
+        } else {
+            // register
+            $("#mymodal").find(".modal-head").attr("class", "modal-head modal-head-reg");
+            $("#mymodal").find(".title").text("ثبت نام");
+            $("#modal-body-register").show();
+        }
+        $("#modal-start").trigger("click");
+    }
+
+
+</script>
+
+</body>
+</html>
