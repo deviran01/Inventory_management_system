@@ -9,7 +9,8 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="imgs/svg/site-logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/png/main-logo.jpg">
+    <link rel="icon" type="image/png" sizes="64x64" href="imgs/png/main-logo.jpg">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles-storage.css">
@@ -20,8 +21,94 @@
 </head>
 <body>
 
+<div id="leftSide" class="">
+    <h4 class="text-center mb-4 title">
+        کسر محصول از انبار
+    </h4>
+    <form class="mt-3 p-2">
+        <div class="form-group">
+            <label class="d-block text-right mb-1">نام محصول را انتخاب کنید</label>
+            <select class="form-control dir-r">
+                <option>محصولی انتخاب نشده است...</option>
+                <option>محصول شماره 1</option>
+                <option>محصول شماره 2</option>
+                <option>محصول شماره 3</option>
+                <option>محصول شماره 4</option>
+                <option>محصول شماره 5</option>
+                <option>محصول شماره 6</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">تعداد خروج</label>
+            <input type="number" class="form-control" min="1" value=""/>
+        </div>
+        <div class="form-group clearfix">
+            <button class="btn btn-danger float-right">
+                کسر
+            </button>
+            <a href="#closeL" class="btn btn-outline-secondary float-right mr-3" onclick="closeLeftSide();">
+                انصراف
+            </a>
+        </div>
+        <section class="result-box">
+            <div class="alert alert-success">
+                <span class="d-block text-right">
+                    اطلاعات به درستی ثبت شدند
+                    <i class="fas fa-check ml-2"></i>
+                </span>
+            </div>
+            <div class="alert alert-danger">
+                <span class="d-block text-right">
+                    خطا در کسر
+                    <i class="fa fa-exclamation-triangle ml-2"></i>
+                </span>
+            </div>
+        </section>
+    </form>
+</div>
 
-<div class="container justify-content-center box-main p-2">
+<div id="rightSide">
+    <h4 class="text-center mb-4 title">
+        افزودن به انبار
+    </h4>
+    <form class="mt-3 p-2">
+        <div class="form-group">
+            <label class="d-block text-right mb-1">نام محصول را وارد کنید</label>
+            <input type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">تعداد</label>
+            <input type="number" class="form-control" min="1" value=""/>
+        </div>
+        <div class="form-group clearfix">
+            <button class="btn btn-success float-right">
+                افزودن
+            </button>
+            <a href="#closeL" class="btn btn-outline-secondary float-right mr-3" onclick="closeRightSide();">
+                انصراف
+            </a>
+        </div>
+        <section class="result-box">
+            <div class="alert alert-success">
+                <span class="d-block text-right">
+                    اطلاعات به درستی ثبت شدند
+                    <i class="fas fa-check ml-2"></i>
+                </span>
+            </div>
+            <div class="alert alert-danger">
+                <span class="d-block text-right">
+                    خطا در افزودن
+                    <i class="fa fa-exclamation-triangle ml-2"></i>
+                </span>
+            </div>
+        </section>
+    </form>
+</div>
+
+<div id="screen-black" class="d-none"></div>
+
+
+<div class="p-2" id="box-main">
     <div>
         <h3 class="text-right">
             لیست همه ی محصولات اینجاست
@@ -30,146 +117,259 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur autem consequatur
         </small>
     </div>
-    <hr>
-<!--    add new-->
-    <div>
-        <div class="text-right">
-            <button class="btn btn-light border" id="btn-showForm" onclick="showForm(this);">
-                <i class="fas fa-plus mr-2"></i>
+    <!--    add new-->
+    <div class="mt-5">
+        <div class="clearfix">
+            <button class="btn btn-success border float-right" id="btn-showForm" onclick="openRightSide();">
+                <i class="fas fa-plus mr-2 text-light"></i>
                 افزودن
             </button>
+            <button class="btn btn-danger border float-left" id="btn-showForm2" onclick="openLeftSide();">
+                <i class="fas fa-minus mr-2 text-light"></i>
+                کسر
+            </button>
         </div>
-        <form action="#addnew" id="form-add" method="post" class="mt-3 p-2 border mx-2 animate__animated animate__fadeInRight animate__fast">
-            <div class="row dir-r">
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label class="d-block mb-1 text-right">شماره یک</label>
-                        <input type="text" class="form-control" placeholder="1111" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="d-block mb-1 text-right">شماره دو</label>
-                        <input type="text" class="form-control" placeholder="2222" />
-                    </div>
-                    <div class="clearfix mb-3">
-                        <label class="d-block mb-1 text-right">انتخاب دسته</label>
-                        <select class="float-right">
-                            <option>op1</option>
-                            <option>op2</option>
-                            <option>op3</option>
-                            <option>op4</option>
-                        </select>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-success">
-                            ثبت
-                        </button>
-                    </div>
-                </div>
-
-                <div class="col-md-6 pt-2 pt-sm-4" id="action-result">
-                    <div>
-                        <img src="imgs/svg/action-success.svg" class="img-fluid mx-auto" alt="action success" />
-                        <b class="text-success d-block mt-3">
-                            عملیات با موفقیت انجام شد
-                        </b>
-                    </div>
-                    <div class="d-none">
-                        <img src="imgs/svg/action-fail.svg" class="img-fluid mx-auto" alt="action success" />
-                        <b class="text-danger d-block mt-3">
-                            خطا در انجام عملیات
-                        </b>
-                    </div>
-                </div>
-
-            </div>
-        </form>
     </div>
-<!--    table-->
+    <!--    table-->
     <div class="mt-5">
-        <table class="table table-responsive-sm mb-2" id="table-main">
+        <table class="table table-responsive  mb-2" id="table-main">
             <tr>
                 <th>
                     <i class="fas fa-sort-numeric-down"></i>
                 </th>
-                <th>شناسه انبار</th>
-                <th>تعداد موجود</th>
-                <th>قیمت</th>
-                <th>ویراش</th>
+                <th>نام محصول</th>
+                <th>قطر محصول</th>
+                <th>نوع محصول</th>
+                <th>طول محصول</th>
+                <th>تناژ محصول</th>
+                <th>تعداد محصول</th>
+                <th>نوع آلیاژ محصول</th>
+                <th>قیمت نقد</th>
+                <th>قیمت عرف</th>
+                <th>قیمت مشتری 1</th>
+                <th>قیمت مشتری 2</th>
+                <th>نام انبار</th>
+                <th>قیمت برش خورده</th>
+                <th>وضعیت</th>
+                <th>نام مسئول</th>
+
+<!--                <th>ویراش</th>-->
             </tr>
             <tr>
                 <td>1</td>
-                <td>as6d56</td>
-                <td>5</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>as6d56</td>
-                <td>2</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>as6d56</td>
-                <td>5</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>as6d56</td>
-                <td>2</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
-                <td>as6d56</td>
-                <td>5</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
             </tr>
             <tr>
-                <td>21</td>
-                <td>as6d56</td>
-                <td>2</td>
-                <td>58000</td>
-                <td>
-                    <i class="fa fa-pen mx-2"></i>
-                    <i class="fa fa-times-circle mx-2"></i>
-                </td>
+                <td>1</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
             </tr>
+            <tr>
+                <td>1</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>apple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+                <td>appple</td>
+<!--                <td>-->
+<!--                    <i class="fa fa-pen mx-2"></i>-->
+<!--                    <i class="fa fa-times-circle mx-2"></i>-->
+<!--                </td>-->
+            </tr>
+
+
         </table>
     </div>
 </div>
+
+
+<div id="wrapper-tools" class="container-fluid">
+    <div class="container row mx-auto">
+        <div class="col-sm-12 justify-content-center">
+            <ul id="tools-bottom-list" class="list-group list-group-horizontal justify-content-center">
+                <li class="list-group-item">
+                    <i class="fas fa-bell"></i>
+                </li>
+                <li class="list-group-item">
+                    <i class="fas fa-filter"></i>
+                </li>
+                <li class="list-group-item">
+                    <i class="fas fa-search"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-    function showForm(btnTag) {
-        $("#form-add").show();
-        $(btnTag).find("i").attr("class", "fas fa-minus mr-2");
+    // leftSide
+    function openLeftSide() {
+        $("#leftSide").attr("class", "animate__animated animate__fadeInLeft animate__faster");
+        $("#leftSide").show();
+        $("#screen-black").removeClass("d-none");
     }
+
+    function closeLeftSide() {
+        $("#leftSide").attr("class", "animate__animated animate__fadeOutLeft animate__fast");
+        $("#screen-black").addClass("d-none");
+        setTimeout(function () {
+            $("#leftSide").hide(0);
+        }, 500);
+    }
+
+    // rightSide
+    function openRightSide() {
+        $("#rightSide").attr("class", "animate__animated animate__fadeInRight animate__faster");
+        $("#rightSide").show();
+        $("#screen-black").removeClass("d-none");
+    }
+
+    function closeRightSide() {
+        $("#rightSide").attr("class", "animate__animated animate__fadeOutRight animate__fast");
+        $("#screen-black").addClass("d-none");
+        setTimeout(function () {
+            $("#rightSide").hide(0);
+        }, 500);
+    }
+
 </script>
 </body>
 </html>
