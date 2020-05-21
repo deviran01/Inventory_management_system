@@ -105,7 +105,7 @@
     </form>
 </div>
 
-<div id="screen-black" class="d-none"></div>
+<div id="screen-black" class="d-none" onclick="closeLeftOrRight();"></div>
 
 
 <div class="p-2" id="box-main">
@@ -117,19 +117,7 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur autem consequatur
         </small>
     </div>
-    <!--    add new-->
-    <div class="mt-5">
-        <div class="clearfix">
-            <button class="btn btn-success border float-right" id="btn-showForm" onclick="openRightSide();">
-                <i class="fas fa-plus mr-2 text-light"></i>
-                افزودن
-            </button>
-            <button class="btn btn-danger border float-left" id="btn-showForm2" onclick="openLeftSide();">
-                <i class="fas fa-minus mr-2 text-light"></i>
-                کسر
-            </button>
-        </div>
-    </div>
+
     <!--    table-->
     <div class="mt-5">
         <table class="table table-responsive  mb-2" id="table-main">
@@ -153,7 +141,7 @@
                 <th>وضعیت</th>
                 <th>نام مسئول</th>
 
-<!--                <th>ویراش</th>-->
+                <!--                <th>ویراش</th>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -172,10 +160,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -194,10 +182,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -216,10 +204,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -238,10 +226,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -260,10 +248,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -282,10 +270,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -304,10 +292,10 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-<!--                <td>-->
-<!--                    <i class="fa fa-pen mx-2"></i>-->
-<!--                    <i class="fa fa-times-circle mx-2"></i>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <i class="fa fa-pen mx-2"></i>-->
+                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
+                <!--                </td>-->
             </tr>
 
 
@@ -320,6 +308,9 @@
     <div class="container row mx-auto">
         <div class="col-sm-12 justify-content-center">
             <ul id="tools-bottom-list" class="list-group list-group-horizontal justify-content-center">
+                <button id="btn-floating-remove" class="btn btn-danger rounded-circle" onclick="openLeftSide()">
+                    <i class="fas fa-minus"></i>
+                </button>
                 <li class="list-group-item">
                     <i class="fas fa-bell"></i>
                 </li>
@@ -329,11 +320,13 @@
                 <li class="list-group-item">
                     <i class="fas fa-search"></i>
                 </li>
+                <button id="btn-floating-add" class="btn btn-success rounded-circle" onclick="openRightSide()">
+                    <i class="fas fa-plus"></i>
+                </button>
             </ul>
         </div>
     </div>
 </div>
-
 
 
 <script src="js/jquery-3.5.1.min.js"></script>
@@ -370,6 +363,10 @@
         }, 500);
     }
 
+    function closeLeftOrRight() {
+        closeLeftSide();
+        closeRightSide();
+    }
 </script>
 </body>
 </html>

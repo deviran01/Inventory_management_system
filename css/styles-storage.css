@@ -12,6 +12,7 @@ i.fas, i.fa, .i.far {
     vertical-align: middle;
 }
 
+
 .dir-r {
     direction: rtl
 }
@@ -63,10 +64,11 @@ body {
     transition: background-color 600ms;
 }
 
-#table-main tr:nth-child(odd) td:hover{
+#table-main tr:nth-child(odd) td:hover {
     background-color: #e9eef8;
 }
-#table-main tr:nth-child(even) td:hover{
+
+#table-main tr:nth-child(even) td:hover {
     background-color: #fbfbfb;
 }
 
@@ -82,8 +84,6 @@ body {
 #table-main td:last-child i {
     cursor: pointer;
 }
-
-
 
 
 #table-main tr:nth-child(odd) {
@@ -152,7 +152,7 @@ body {
 #rightSide {
     display: none;
     height: 100%;
-    width: 400px;
+    width: 50%;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -165,7 +165,7 @@ body {
 #leftSide {
     display: none;
     height: 100%;
-    width: 400px;
+    width: 50%;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -174,7 +174,8 @@ body {
     overflow-x: hidden;
     padding: 25px 15px 0;
 }
-#leftSide .title ,#rightSide .title {
+
+#leftSide .title, #rightSide .title {
     padding: 1px 8px 10px;
     border-bottom: 1px solid #d8d8d8;
     width: 95%;
@@ -189,6 +190,21 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+
+#btn-floating-remove {
+    width: 42px;
+    height: 42px;
+    margin-top: 2px;
+    margin-right: 6px;
+}
+
+#btn-floating-add {
+    width: 42px;
+    height: 42px;
+    margin-top: 2px;
+    margin-left: 6px;
 }
 
 
@@ -209,6 +225,7 @@ body {
         overflow-x: hidden;
         padding: 22px 8px 0;
     }
+
     #rightSide {
         display: none;
         height: 100%;
@@ -238,6 +255,7 @@ body {
         overflow-x: hidden;
         padding: 25px 15px 0;
     }
+
     #rightSide {
         display: none;
         height: 100%;
@@ -254,6 +272,32 @@ body {
 
 /* md */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
+    #leftSide {
+        display: none;
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        background-color: #f1f1f1;
+        overflow-x: hidden;
+        padding: 25px 15px 0;
+    }
+
+    #rightSide {
+        display: none;
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        background-color: #f1f1f1;
+        overflow-x: hidden;
+        padding: 25px 15px 0;
+    }
 
 }
 
