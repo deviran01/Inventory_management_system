@@ -16,12 +16,11 @@
     <link rel="stylesheet" type="text/css" href="css/styles-storage.css">
     <link rel="stylesheet" type="text/css" href="css/icons-fontawesome.css">
 
-
     <title>مدیریت انبار</title>
 </head>
 <body>
 
-<div id="leftSide" class="">
+<div id="leftSide" >
     <h4 class="text-center mb-4 title">
         کسر محصول از انبار
     </h4>
@@ -105,10 +104,56 @@
     </form>
 </div>
 
+<div id="bottomSide">
+    <div class="inside">
+        <section class="container-fluid">
+            <div class="row pb-3">
+                <div class="offset-1 col-10 offset-1 pt-2">
+<!--                    <h4 class="text-center">-->
+<!--                        جستجو-->
+<!--                    </h4>-->
+                </div>
+                <form action="#search" method="post" class="col-12 mt-2 dir-r">
+                    <section class="row">
+                        <div class="col-lg-6 form-group">
+                            <label class="d-block text-right mb-1">نام</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
+                            <select class="form-control dir-r">
+                                <option value="">test</option>
+                                <option value="">test</option>
+                                <option value="">test</option>
+                                <option value="">test</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-12 form-group text-right pt-1">
+                            <button class="btn btn-warning">
+                                جستجو
+                                <i class="fas fa-search mr-2"></i>
+                            </button>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
 <div id="screen-black" class="d-none" onclick="closeLeftOrRight();"></div>
 
 
 <div class="p-2" id="box-main">
+
     <div>
         <h3 class="text-right">
             لیست همه ی محصولات اینجاست
@@ -120,18 +165,18 @@
 
     <!--    table-->
     <div class="mt-5">
-        <table class="table table-responsive  mb-2" id="table-main">
+        <table class="table table-responsive-xl dir-r mb-2" id="table-main">
             <tr>
                 <th>
                     <i class="fas fa-sort-numeric-down"></i>
                 </th>
-                <th>نام محصول</th>
-                <th>قطر محصول</th>
-                <th>نوع محصول</th>
-                <th>طول محصول</th>
-                <th>تناژ محصول</th>
-                <th>تعداد محصول</th>
-                <th>نوع آلیاژ محصول</th>
+                <th>نام</th>
+                <th>قطر</th>
+                <th>نوع</th>
+                <th>طول</th>
+                <th>تناژ</th>
+                <th>تعداد</th>
+                <th>نوع آلیاژ</th>
                 <th>قیمت نقد</th>
                 <th>قیمت عرف</th>
                 <th>قیمت مشتری 1</th>
@@ -139,9 +184,7 @@
                 <th>نام انبار</th>
                 <th>قیمت برش خورده</th>
                 <th>وضعیت</th>
-                <th>نام مسئول</th>
-
-                <!--                <th>ویراش</th>-->
+                <th>نمسئول</th>
             </tr>
             <tr>
                 <td>1</td>
@@ -160,10 +203,6 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
             </tr>
             <tr>
                 <td>1</td>
@@ -182,122 +221,7 @@
                 <td>appple</td>
                 <td>appple</td>
                 <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
             </tr>
-            <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <!--                <td>-->
-                <!--                    <i class="fa fa-pen mx-2"></i>-->
-                <!--                    <i class="fa fa-times-circle mx-2"></i>-->
-                <!--                </td>-->
-            </tr>
-
 
         </table>
     </div>
@@ -311,15 +235,9 @@
                 <button id="btn-floating-remove" class="btn btn-danger rounded-circle" onclick="openLeftSide()">
                     <i class="fas fa-minus"></i>
                 </button>
-                <li class="list-group-item">
-                    <i class="fas fa-bell"></i>
-                </li>
-                <li class="list-group-item">
-                    <i class="fas fa-filter"></i>
-                </li>
-                <li class="list-group-item">
+                <button id="btn-floating-search" class="btn btn-warning rounded-circle" onclick="openBottomSide()">
                     <i class="fas fa-search"></i>
-                </li>
+                </button>
                 <button id="btn-floating-add" class="btn btn-success rounded-circle" onclick="openRightSide()">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -366,6 +284,21 @@
     function closeLeftOrRight() {
         closeLeftSide();
         closeRightSide();
+        closeBottomSide();
+    }
+
+    // bottom side
+    function openBottomSide() {
+        $("#bottomSide").attr("class", "animate__animated animate__fadeInUp animate__faster");
+        $("#bottomSide").show();
+        $("#screen-black").removeClass("d-none");
+    }
+    function closeBottomSide() {
+        $("#bottomSide").attr("class", "animate__animated animate__fadeOutDown animate__fast");
+        $("#screen-black").addClass("d-none");
+        setTimeout(function () {
+            $("#bottomSide").hide(0);
+        }, 500);
     }
 </script>
 </body>

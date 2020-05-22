@@ -56,6 +56,10 @@ body {
     direction: rtl;
     border: 1px solid #efefef;
     box-shadow: 0 1px 4px 1px #e1e1e1;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 #table-main th, td {
@@ -78,7 +82,6 @@ body {
 
 #table-main td:last-child {
     color: #494949;
-    cursor: default;
 }
 
 #table-main td:last-child i {
@@ -125,7 +128,7 @@ body {
 
 #wrapper-tools {
     position: fixed;
-    bottom: 5px;
+    bottom: 9px;
 }
 
 #tools-bottom-list li {
@@ -149,10 +152,32 @@ body {
     color: #484848;
 }
 
+#bottomSide {
+    display: none;
+    padding: 0 6px;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+#bottomSide .inside {
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    max-height: 60%;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 8px 0 #7676769c;
+    border: 1px solid #e1e1e1;
+    border-bottom: 0;
+    width: 100%;
+    max-width: 960px;
+}
+
+
 #rightSide {
     display: none;
     height: 100%;
-    width: 50%;
+    width: 34%;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -165,7 +190,7 @@ body {
 #leftSide {
     display: none;
     height: 100%;
-    width: 50%;
+    width: 34%;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -194,17 +219,23 @@ body {
 
 
 #btn-floating-remove {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     margin-top: 2px;
     margin-right: 6px;
 }
 
 #btn-floating-add {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     margin-top: 2px;
     margin-left: 6px;
+}
+
+#btn-floating-search {
+    width: 48px;
+    height: 48px;
+    margin-top: 2px;
 }
 
 
@@ -238,6 +269,7 @@ body {
         overflow-x: hidden;
         padding: 25px 15px 0;
     }
+
 }
 
 /* sm */
@@ -268,6 +300,7 @@ body {
         overflow-x: hidden;
         padding: 25px 15px 0;
     }
+
 }
 
 /* md */
@@ -276,7 +309,7 @@ body {
     #leftSide {
         display: none;
         height: 100%;
-        width: 50%;
+        width: 34%;
         position: fixed;
         z-index: 10;
         top: 0;
@@ -289,7 +322,7 @@ body {
     #rightSide {
         display: none;
         height: 100%;
-        width: 50%;
+        width: 34%;
         position: fixed;
         z-index: 10;
         top: 0;
@@ -299,11 +332,19 @@ body {
         padding: 25px 15px 0;
     }
 
+
 }
 
 /* lg */
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
+}
+
+/* xl */
+@media (min-width: 1200px) {
+    #table-main {
+        display: table;
+    }
 }
 
 /*
