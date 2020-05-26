@@ -68,6 +68,10 @@ body {
     transition: background-color 600ms;
 }
 
+#table-main tr:first-child img {
+    width: 32px;
+}
+
 #table-main tr:nth-child(odd) td:hover {
     background-color: #e9eef8;
 }
@@ -152,6 +156,15 @@ body {
     color: #484848;
 }
 
+
+#tools-bottom-list button {
+    width: 48px;
+    height: 48px;
+    margin: 2px 5px 0;
+    color: #ffffff;
+}
+
+
 #bottomSide {
     display: none;
     padding: 0 6px;
@@ -175,6 +188,7 @@ body {
 
 
 #rightSide {
+    direction: rtl;
     display: none;
     height: 100%;
     width: 34%;
@@ -186,6 +200,19 @@ body {
     overflow-x: hidden;
     padding: 25px 15px 0;
 }
+#rightSide::-webkit-scrollbar {
+    width: 9px;
+}
+#rightSide::-webkit-scrollbar-track {
+}
+#rightSide::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+}
+#rightSide::-webkit-scrollbar-thumb:hover {
+    background: #909090;
+}
+
+
 
 #leftSide {
     display: none;
@@ -199,6 +226,7 @@ body {
     overflow-x: hidden;
     padding: 25px 15px 0;
 }
+
 
 #leftSide .title, #rightSide .title {
     padding: 1px 8px 10px;
@@ -217,7 +245,15 @@ body {
     left: 0;
 }
 
+.units {
+    padding: 6px 0px 0px 9px;
+    text-align: left;
+    float: left;
+    font-weight: bold;
+}
 
+
+/*
 #btn-floating-remove {
     width: 48px;
     height: 48px;
@@ -236,7 +272,7 @@ body {
     width: 48px;
     height: 48px;
     margin-top: 2px;
-}
+}/*
 
 
 /*
