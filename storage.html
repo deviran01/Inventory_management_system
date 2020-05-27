@@ -27,19 +27,54 @@
     <form class="mt-3 p-2">
         <div class="form-group">
             <label class="d-block text-right mb-1">نام محصول را انتخاب کنید</label>
-            <select class="form-control dir-r">
-                <option>محصولی انتخاب نشده است...</option>
-                <option>محصول شماره 1</option>
-                <option>محصول شماره 2</option>
-                <option>محصول شماره 3</option>
-                <option>محصول شماره 4</option>
-                <option>محصول شماره 5</option>
-                <option>محصول شماره 6</option>
+            <input type="text" class="form-control" placeholder="auto complete not done yet"/>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">قطر</label>
+            <select class="form-control">
+                <option value="">قطر را انتخاب کنید</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
             </select>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">تعداد خروج</label>
-            <input type="number" class="form-control" min="1" value=""/>
+            <label class="d-block text-right mb-1">نوع</label>
+            <select class="form-control">
+                <option value="">نوع را انتخاب کنید</option>
+                <option value="">یک</option>
+                <option value="">دو</option>
+                <option value="">سه</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">طول</label>
+            <select class="form-control">
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">تناژ</label>
+            <input type="number" class="form-control" min="0" value=""/>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">تعداد</label>
+            <input type="number" class="form-control" min="0" value=""/>
+        </div>
+        <div class="form-group">
+            <label class="d-block text-right mb-1">آلیاژ</label>
+            <select class="form-control">
+                <option value="">نوع آلیاژ...</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+                <option value="">دو</option>
+            </select>
         </div>
         <div class="form-group clearfix">
             <button class="btn btn-danger float-right">
@@ -106,6 +141,7 @@
                     </small>
                 </label>
                 <select class="form-control">
+                    <option value="">قطر مورد نظر را انتخاب کنید...</option>
                     <option value="">2.8</option>
                     <option value="">3.5</option>
                     <option value="">2</option>
@@ -114,6 +150,7 @@
             <div class="form-group">
                 <label class="d-block text-right mb-1">نوع</label>
                 <select class="form-control dir-r">
+                    <option value="">نوع مورد نظر را انتخاب کنید...</option>
                     <option value="">نوع شماره یک</option>
                     <option value="">نوع شماره یک</option>
                     <option value="">نوع شماره یک</option>
@@ -187,7 +224,7 @@
     </div>
 </div>
 
-<div id="screen-black" class="d-none" onclick="closeLeftOrRight();"></div>
+<div id="screen-black" class="d-none" onclick="closeAllSides();"></div>
 
 
 <div class="p-2" id="box-main">
@@ -213,22 +250,22 @@
                     نام
                 </th>
                 <th>
-                    <img src="imgs/svg/diameter.svg" alt="">
+                    <img src="imgs/svg2/compass.svg" alt="">
                 </th>
                 <th>
-                    <img src="imgs/svg/type.svg" alt="">
+                    <img src="imgs/svg2/diagram.svg" alt="">
                 </th>
                 <th>
-                    <img src="imgs/svg/meter.svg" alt="">
+                    <img src="imgs/svg2/double-arrow-1.svg" alt="">
                 </th>
                 <th>
-                    <img src="imgs/svg/tonage.svg" alt="laskd;">
+                    <img src="imgs/svg2/shipping-and-delivery.svg" alt="laskd;">
                 </th>
                 <th>
-                    <img src="imgs/svg/count.svg" alt="">
+                    <img src="imgs/svg2/count.svg" alt="">
                 </th>
                 <th>
-                    <img src="imgs/svg/chain.svg" alt="storehouse icon">
+                    <img src="imgs/svg2/link.svg" alt="storehouse icon">
                 </th>
                 <th>
                     قیمت نقد
@@ -243,16 +280,16 @@
                     قیمت مشتری 2
                 </th>
                 <th>
-                    <img src="imgs/svg/storehouse.svg" alt="storehouse icon">
-                </th>
-                <th>
                     قیمت برش خورده
                 </th>
                 <th>
-                    <img src="imgs/svg/status.svg" alt="storehouse icon">
+                    <img src="imgs/svg2/warehouse.svg" alt="storehouse icon">
                 </th>
                 <th>
-                    <img src="imgs/svg/manager.svg" alt="manager icon">
+                    <img src="imgs/svg2/bar-chart.svg" alt="storehouse icon">
+                </th>
+                <th>
+                    <img src="imgs/svg2/user.svg" alt="manager icon">
                 </th>
             </tr>
             <!--        text    -->
@@ -294,10 +331,10 @@
                     قیمت مشتری 2
                 </th>
                 <th>
-                    انبار
+                    قیمت برش خورده
                 </th>
                 <th>
-                    قیمت برش خورده
+                    انبار
                 </th>
                 <th>
                     وضعیت
@@ -473,10 +510,10 @@
 
     function closeLeftSide() {
         $("#leftSide").attr("class", "animate__animated animate__fadeOutLeft animate__fast");
-        $("#screen-black").addClass("d-none");
         setTimeout(function () {
             $("#leftSide").hide(0);
         }, 500);
+        $("#screen-black").addClass("d-none");
     }
 
     // rightSide
@@ -488,13 +525,13 @@
 
     function closeRightSide() {
         $("#rightSide").attr("class", "animate__animated animate__fadeOutRight animate__fast");
-        $("#screen-black").addClass("d-none");
         setTimeout(function () {
             $("#rightSide").hide(0);
         }, 500);
+        $("#screen-black").addClass("d-none");
     }
 
-    function closeLeftOrRight() {
+    function closeAllSides() {
         closeLeftSide();
         closeRightSide();
         closeBottomSide();
@@ -509,10 +546,10 @@
 
     function closeBottomSide() {
         $("#bottomSide").attr("class", "animate__animated animate__fadeOutDown animate__fast");
-        $("#screen-black").addClass("d-none");
         setTimeout(function () {
             $("#bottomSide").hide(0);
         }, 500);
+        $("#screen-black").addClass("d-none");
     }
 </script>
 </body>

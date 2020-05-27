@@ -215,6 +215,7 @@ body {
 
 
 #leftSide {
+    direction: rtl;
     display: none;
     height: 100%;
     width: 34%;
@@ -226,7 +227,17 @@ body {
     overflow-x: hidden;
     padding: 25px 15px 0;
 }
-
+#leftSide::-webkit-scrollbar {
+    width: 9px;
+}
+#leftSide::-webkit-scrollbar-track {
+}
+#leftSide::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+}
+#leftSide::-webkit-scrollbar-thumb:hover {
+    background: #909090;
+}
 
 #leftSide .title, #rightSide .title {
     padding: 1px 8px 10px;
@@ -234,6 +245,12 @@ body {
     width: 95%;
     margin: auto;
 }
+
+.result-box {
+    direction: ltr;
+    margin-bottom: 24px;
+}
+
 
 #screen-black {
     z-index: 5;
@@ -246,33 +263,12 @@ body {
 }
 
 .units {
-    padding: 6px 0px 0px 9px;
+    padding: 6px 0 0 9px;
     text-align: left;
     float: left;
     font-weight: bold;
 }
 
-
-/*
-#btn-floating-remove {
-    width: 48px;
-    height: 48px;
-    margin-top: 2px;
-    margin-right: 6px;
-}
-
-#btn-floating-add {
-    width: 48px;
-    height: 48px;
-    margin-top: 2px;
-    margin-left: 6px;
-}
-
-#btn-floating-search {
-    width: 48px;
-    height: 48px;
-    margin-top: 2px;
-}/*
 
 
 /*
