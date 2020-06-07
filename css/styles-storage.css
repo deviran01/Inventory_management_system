@@ -17,6 +17,10 @@ i.fas, i.fa, .i.far {
     direction: rtl
 }
 
+.bg-tr {
+    background-color: transparent !important;
+}
+
 
 @font-face {
     font-family: 'iransansweb';
@@ -68,8 +72,16 @@ body {
     transition: background-color 600ms;
 }
 
+/* titr icon */
 #table-main tr:first-child img {
     width: 32px;
+}
+
+/* edit icon */
+#table-main td:last-child img {
+    width: 26px;
+    padding: 2px;
+    cursor: pointer;
 }
 
 #table-main tr:nth-child(odd) td:hover {
@@ -84,9 +96,32 @@ body {
     vertical-align: middle;
 }
 
-#table-main td:last-child {
-    color: #494949;
+.report {
+    position: relative;
+    background-color: #fbfbfb;
+    border: 1px solid #457bd6 !important;
+    border-left: 0 !important;
+    color: #457bd6;
 }
+.triangle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 24.5px 20px 24.5px 0;
+    border-color: transparent #457bd6 transparent transparent;
+    line-height: 0;
+    _border-color: #000000 #457bd6 #000000 #000000;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+.report-info {
+    display: block;
+    text-align: center;
+}
+
 
 #table-main td:last-child i {
     cursor: pointer;
@@ -172,6 +207,8 @@ body {
     bottom: 0;
     z-index: 10;
     width: 100%;
+    max-height: 82%;
+    overflow-y: auto;
 }
 
 #bottomSide .inside {
@@ -267,9 +304,79 @@ body {
     text-align: left;
     float: left;
     font-weight: bold;
+    font-size: 11pt;
 }
 
 
+#open-right-side {
+    position: fixed;
+    right: 0;
+    bottom: 63%;
+}
+#open-right-side button {
+    width: 42px;
+    height: 88px;
+    border-radius: 7px 0 0 7px;
+}
+#open-right-side button i {
+    transition: margin-right 400ms ease;
+}
+#open-right-side button:hover i {
+    margin-right: 6px;
+}
+
+#open-left-side {
+    position: fixed;
+    left: 0;
+    bottom: 63%;
+}
+#open-left-side button {
+    width: 42px;
+    height: 88px;
+    border-radius: 0 7px 7px 0;
+}
+#open-left-side button i {
+    transition: margin-left 400ms ease;
+}
+#open-left-side button:hover i {
+    margin-left: 6px;
+}
+
+
+#open-bottom-side {
+    position: fixed;
+    bottom: 5px;
+}
+#open-bottom-side button {
+    width: 88px;
+    height: 42px;
+}
+#open-bottom-side button i {
+    transition: margin-bottom 400ms ease;
+}
+#open-bottom-side button:hover i {
+    margin-bottom: 6px;
+}
+
+
+
+#edit-modal .modal-header {
+    padding: 10px 13px;
+    background-color: #14b1ca;
+    color: #ffffff;
+    font-size: 12pt;
+    text-align: right;
+}
+
+#modal-form-edit {
+    width: 90%;
+    margin: 20px auto 10px;
+}
+
+#modal-close {
+    cursor: pointer;
+    font-size: 14pt;
+}
 
 /*
     ********************
@@ -302,6 +409,11 @@ body {
         padding: 25px 15px 0;
     }
 
+    .report-info {
+        display: block;
+        text-align: right;
+        padding-right: 30px;
+    }
 }
 
 /* sm */
@@ -333,6 +445,11 @@ body {
         padding: 25px 15px 0;
     }
 
+    .report-info {
+        display: block;
+        text-align: right;
+        padding-right: 30px;
+    }
 }
 
 /* md */
@@ -364,7 +481,11 @@ body {
         padding: 25px 15px 0;
     }
 
-
+    .report-info {
+        display: block;
+        text-align: right;
+        padding-right: 30px;
+    }
 }
 
 /* lg */

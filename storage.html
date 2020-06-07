@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -18,7 +19,12 @@
 
     <title>مدیریت انبار</title>
 </head>
+
 <body>
+
+<div id="screen-black" class="d-none" onclick="closeAllSides();">
+    <span id="open-modal-btn" class="d-none" data-toggle="modal" data-target="#edit-modal"></span>
+</div>
 
 <div id="leftSide">
     <h4 class="text-center mb-4 title">
@@ -26,55 +32,49 @@
     </h4>
     <form class="mt-3 p-2">
         <div class="form-group">
-            <label class="d-block text-right mb-1">نام محصول را انتخاب کنید</label>
-            <input type="text" class="form-control" placeholder="auto complete not done yet"/>
+            <label class="d-block text-right mb-1">
+                نام محصول
+            </label>
+            <input type="text" class="form-control"/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">قطر</label>
-            <select class="form-control">
-                <option value="">قطر را انتخاب کنید</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-            </select>
+            <label class="d-block text-right mb-1">
+                آلیاژ
+            </label>
+            <input type="text" class="form-control" placeholder="AC-not"/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">نوع</label>
-            <select class="form-control">
-                <option value="">نوع را انتخاب کنید</option>
-                <option value="">یک</option>
-                <option value="">دو</option>
-                <option value="">سه</option>
-            </select>
+            <label class="d-block text-right mb-1">
+                نوع
+            </label>
+            <input type="text" class="form-control" placeholder="AC-not"/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">طول</label>
-            <select class="form-control">
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-            </select>
+            <label class="d-block text-right mb-1">
+                تعداد
+            </label>
+            <input type="number" class="form-control" min="1" value=""/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">تناژ</label>
-            <input type="number" class="form-control" min="0" value=""/>
+            <label class="d-block text-right mb-1">
+                تناژ
+                <small class="units">kg</small>
+            </label>
+            <input type="number" class="form-control" min="1" value=""/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">تعداد</label>
-            <input type="number" class="form-control" min="0" value=""/>
+            <label class="d-block text-right mb-1">
+                طول
+                <small class="units">m</small>
+            </label>
+            <input type="number" class="form-control" min="1" value="" step="0.01"/>
         </div>
         <div class="form-group">
-            <label class="d-block text-right mb-1">آلیاژ</label>
-            <select class="form-control">
-                <option value="">نوع آلیاژ...</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-                <option value="">دو</option>
-            </select>
+            <label class="d-block text-right mb-1">
+                قطر
+                <small class="units">cm</small>
+            </label>
+            <input type="number" class="form-control" step="0.01"/>
         </div>
         <div class="form-group clearfix">
             <button class="btn btn-danger float-right">
@@ -86,16 +86,16 @@
         </div>
         <section class="result-box">
             <div class="alert alert-success">
-                <span class="d-block text-right">
-                    اطلاعات به درستی ثبت شدند
-                    <i class="fas fa-check ml-2"></i>
-                </span>
+                    <span class="d-block text-right">
+                        اطلاعات به درستی ثبت شدند
+                        <i class="fas fa-check ml-2"></i>
+                    </span>
             </div>
             <div class="alert alert-danger">
-                <span class="d-block text-right">
-                    خطا در کسر
-                    <i class="fa fa-exclamation-triangle ml-2"></i>
-                </span>
+                    <span class="d-block text-right">
+                        خطا در کسر
+                        <i class="fa fa-exclamation-triangle ml-2"></i>
+                    </span>
             </div>
         </section>
     </form>
@@ -108,55 +108,49 @@
         </h4>
         <form class="mt-3 p-2">
             <div class="form-group">
-                <label class="d-block text-right mb-1">نام محصول</label>
+                <label class="d-block text-right mb-1">
+                    نام محصول
+                </label>
                 <input type="text" class="form-control"/>
             </div>
             <div class="form-group">
-                <label class="d-block text-right mb-1">تعداد</label>
+                <label class="d-block text-right mb-1">
+                    آلیاژ
+                </label>
+                <input type="text" class="form-control" placeholder="AC-not"/>
+            </div>
+            <div class="form-group">
+                <label class="d-block text-right mb-1">
+                    نوع
+                </label>
+                <input type="text" class="form-control" placeholder="AC-not"/>
+            </div>
+            <div class="form-group">
+                <label class="d-block text-right mb-1">
+                    تعداد
+                </label>
                 <input type="number" class="form-control" min="1" value=""/>
             </div>
             <div class="form-group">
                 <label class="d-block text-right mb-1">
                     تناژ
-                    <small class="units">
-                        تن بر متر مربع
-                    </small>
+                    <small class="units">kg</small>
                 </label>
                 <input type="number" class="form-control" min="1" value=""/>
             </div>
             <div class="form-group">
                 <label class="d-block text-right mb-1">
                     طول
-                    <small class="units">
-                        متر
-                    </small>
+                    <small class="units">m</small>
                 </label>
-                <input type="number" class="form-control" min="1" value=""/>
+                <input type="number" class="form-control" min="1" value="" step="0.01"/>
             </div>
             <div class="form-group">
                 <label class="d-block text-right mb-1">
                     قطر
-                    <small class="units">
-                        متر بر عدد Pi
-                    </small>
+                    <small class="units">cm</small>
                 </label>
-                <select class="form-control">
-                    <option value="">قطر مورد نظر را انتخاب کنید...</option>
-                    <option value="">2.8</option>
-                    <option value="">3.5</option>
-                    <option value="">2</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="d-block text-right mb-1">نوع</label>
-                <select class="form-control dir-r">
-                    <option value="">نوع مورد نظر را انتخاب کنید...</option>
-                    <option value="">نوع شماره یک</option>
-                    <option value="">نوع شماره یک</option>
-                    <option value="">نوع شماره یک</option>
-                    <option value="">نوع شماره یک</option>
-                    <option value="">نوع شماره یک</option>
-                </select>
+                <input type="number" class="form-control" step="0.01"/>
             </div>
             <div class="form-group clearfix">
                 <button class="btn btn-success float-right">
@@ -168,16 +162,16 @@
             </div>
             <section class="result-box">
                 <div class="alert alert-success">
-                <span class="d-block text-right">
-                    اطلاعات به درستی ثبت شدند
-                    <i class="fas fa-check ml-2"></i>
-                </span>
+                        <span class="d-block text-right">
+                            اطلاعات به درستی ثبت شدند
+                            <i class="fas fa-check ml-2"></i>
+                        </span>
                 </div>
                 <div class="alert alert-danger">
-                <span class="d-block text-right">
-                    خطا در افزودن
-                    <i class="fa fa-exclamation-triangle ml-2"></i>
-                </span>
+                        <span class="d-block text-right">
+                            خطا در افزودن
+                            <i class="fa fa-exclamation-triangle ml-2"></i>
+                        </span>
                 </div>
             </section>
         </form>
@@ -185,30 +179,42 @@
 </div>
 
 <div id="bottomSide">
-    <div class="inside">
+    <div class="inside" >
         <section class="container-fluid">
             <div class="row pb-3">
                 <form action="#search" method="post" class="col-12 mt-3 dir-r">
                     <section class="row">
                         <div class="col-lg-6 form-group">
-                            <label class="d-block text-right mb-1">نام</label>
+                            <label class="d-block text-right mb-1">
+                                نام محصول
+                            </label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
+                            <label class="d-block text-right mb-1">
+                                آلیاژ
+                            </label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
-                            <select class="form-control dir-r">
-                                <option value="">test</option>
-                                <option value="">test</option>
-                                <option value="">test</option>
-                                <option value="">test</option>
-                            </select>
+                            <label class="d-block text-right mb-1">
+                                تناژ
+                                <small class="units">KG</small>
+                            </label>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="d-block text-right mb-1">ویژگی شماره یک</label>
+                            <label class="d-block text-right mb-1">
+                                طول
+                                <small class="units">M</small>
+                            </label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label class="d-block text-right mb-1">
+                                قطر
+                                <small class="units">CM</small>
+                            </label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="col-12 form-group text-right pt-1">
@@ -224,11 +230,10 @@
     </div>
 </div>
 
-<div id="screen-black" class="d-none" onclick="closeAllSides();"></div>
-
 
 <div class="p-2" id="box-main">
 
+    <!--  table title - description  -->
     <div>
         <h3 class="text-right">
             لیست همه ی محصولات اینجاست
@@ -247,13 +252,13 @@
 
                 </th>
                 <th>
-                    نام
+                    <img src="imgs/svg2/name-tag.svg" alt="">
                 </th>
                 <th>
                     <img src="imgs/svg2/compass.svg" alt="">
                 </th>
                 <th>
-                    <img src="imgs/svg2/diagram.svg" alt="">
+                    <img src="imgs/svg2/factory-2.svg" alt="">
                 </th>
                 <th>
                     <img src="imgs/svg2/double-arrow-1.svg" alt="">
@@ -268,32 +273,28 @@
                     <img src="imgs/svg2/link.svg" alt="storehouse icon">
                 </th>
                 <th>
-                    قیمت نقد
-                </th>
-                <th>
-                    قیمت عرف
-                </th>
-                <th>
-                    قیمت مشتری 1
-                </th>
-                <th>
-                    قیمت مشتری 2
-                </th>
-                <th>
-                    قیمت برش خورده
-                </th>
-                <th>
                     <img src="imgs/svg2/warehouse.svg" alt="storehouse icon">
                 </th>
                 <th>
-                    <img src="imgs/svg2/bar-chart.svg" alt="storehouse icon">
+                    نقد
                 </th>
                 <th>
-                    <img src="imgs/svg2/user.svg" alt="manager icon">
+                    عرف
+                </th>
+                <th>
+                    مشتری 1
+                </th>
+                <th>
+                    مشتری 2
+                </th>
+                <th>
+                    برش خورده
+                </th>
+                <th>
+                    ویرایش
                 </th>
             </tr>
-            <!--        text    -->
-            <tr>
+            <!--<tr>
                 <th>
 
                 </th>
@@ -304,7 +305,7 @@
                     قطر
                 </th>
                 <th>
-                    نوع
+                    کارخانه
                 </th>
                 <th>
                     طول
@@ -316,182 +317,199 @@
                     تعداد
                 </th>
                 <th>
-                    نوع آلیاژ
-                </th>
-                <th>
-                    قیمت نقد
-                </th>
-                <th>
-                    قیمت عرف
-                </th>
-                <th>
-                    قیمت مشتری 1
-                </th>
-                <th>
-                    قیمت مشتری 2
-                </th>
-                <th>
-                    قیمت برش خورده
+                    آلیاژ
                 </th>
                 <th>
                     انبار
                 </th>
                 <th>
-                    وضعیت
+                    نقد
                 </th>
                 <th>
-                    مسئول
-                </th>
-            </tr>
-            <!--        icons-font    -->
-            <!--<tr>
-                <th>
-
+                    عرف
                 </th>
                 <th>
-                    <i class="far fa-file-alt"></i>
+                    مشتری 1
                 </th>
                 <th>
-                    <i class="fas fa-ruler"></i>
+                    مشتری 2
                 </th>
                 <th>
-                    <i class="fas fa-project-diagram"></i>
+                    برش خورده
                 </th>
                 <th>
-                    <i class="fas fa-tape"></i>
-                </th>
-                <th>تناژ</th>
-                <th>
-                    <i class="fas fa-cubes"></i>
-                </th>
-                <th>نوع آلیاژ</th>
-                <th>قیمت نقد</th>
-                <th>قیمت عرف</th>
-                <th>قیمت مشتری 1</th>
-                <th>قیمت مشتری 2</th>
-                <th>
-                    <i class="fas fa-map-marker-alt"></i>
-                </th>
-                <th>
-                    <i class="fa fa-tools"></i>
-                </th>
-                <th>
-                    <i class="far fa-check-square"></i>
-                </th>
-                <th>
-                    <i class="far fa-id-card"></i>
+                    ویرایش
                 </th>
             </tr>-->
             <tr>
                 <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
+                <td>تیراهن</td>
+                <td>20</td>
+                <td>صنایع یزد</td>
+                <td>25.65</td>
+                <td>4500</td>
+                <td>72</td>
+                <td>مس-فولاد</td>
+                <td>امینی</td>
+                <td>5,300</td>
+                <td>5,800</td>
+                <td>6,200</td>
+                <td>6,900</td>
+                <td>7,500</td>
+                <td>
+                    <img src="imgs/svg2/edit-4.svg" alt="ویرایش"/>
+                </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
+                <td>2</td>
+                <td>تیراهن</td>
+                <td>25</td>
+                <td>صنایع یزد</td>
+                <td>25.4</td>
+                <td>4100</td>
+                <td>65</td>
+                <td>مس-فولاد</td>
+                <td>احمدی</td>
+                <td>4,300</td>
+                <td>5,800</td>
+                <td>6,200</td>
+                <td>6,900</td>
+                <td>7,100</td>
+                <td>
+                    <img src="imgs/svg2/edit-4.svg" alt="ویرایش"/>
+                </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
+                <td colspan="15" class="report">
+                    <span class="triangle"></span>
+                    <b class="report-info">
+                        15 تن
+                        ,
+                        16 شاخه
+                    </b>
+                </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
+                <td>3</td>
+                <td>ورق</td>
+                <td>15</td>
+                <td>صنایع یزد</td>
+                <td>28.4</td>
+                <td>4900</td>
+                <td>45</td>
+                <td>چدن</td>
+                <td>احمدی</td>
+                <td>1,300</td>
+                <td>5,200</td>
+                <td>8,200</td>
+                <td>6,900</td>
+                <td>9,300</td>
+                <td>
+                    <img src="imgs/svg2/edit-4.svg" alt="ویرایش"/>
+                </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>apple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
-                <td>appple</td>
+                <td>4</td>
+                <td>ورق</td>
+                <td>17</td>
+                <td>صنایع کرمان</td>
+                <td>18.4</td>
+                <td>4900</td>
+                <td>45</td>
+                <td>آهن</td>
+                <td>احمدی</td>
+                <td>5,300</td>
+                <td>5,200</td>
+                <td>9,200</td>
+                <td>6,900</td>
+                <td>7,300</td>
+                <td>
+                    <img src="imgs/svg2/edit-4.svg" alt="ویرایش"/>
+                </td>
             </tr>
-
+            <tr>
+                <td>5</td>
+                <td>ورق</td>
+                <td>55</td>
+                <td>صنایع یزد</td>
+                <td>29.4</td>
+                <td>4300</td>
+                <td>40</td>
+                <td>چدن</td>
+                <td>احمدی</td>
+                <td>1,300</td>
+                <td>6,200</td>
+                <td>8,200</td>
+                <td>6,500</td>
+                <td>10,800</td>
+                <td>
+                    <img src="imgs/svg2/edit-4.svg" alt="ویرایش"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="15" class="report">
+                    <span class="triangle"></span>
+                    <b class="report-info">
+                        8 تن
+                        ,
+                        9 ورق
+                    </b>
+                </td>
+            </tr>
         </table>
     </div>
 </div>
 
 
-<div id="wrapper-tools" class="container-fluid">
-    <div class="container row mx-auto">
-        <div class="col-sm-12 justify-content-center">
-            <ul id="tools-bottom-list" class="list-group list-group-horizontal justify-content-center">
-                <button id="btn-floating-remove" class="btn btn-danger rounded-circle" onclick="openLeftSide()">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button id="btn-floating-search" class="btn btn-warning rounded-circle" onclick="openBottomSide()">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button id="btn-floating-add" class="btn btn-success rounded-circle" onclick="openRightSide()">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </ul>
+<!--
+controllers
+-->
+<div id="open-right-side">
+    <button class="btn btn-success" onclick="openRightSide()">
+        <i class="fas fa-angle-double-left"></i>
+    </button>
+</div>
+<div id="open-left-side">
+    <button class="btn btn-danger" onclick="openLeftSide()">
+        <i class="fas fa-angle-double-right"></i>
+    </button>
+</div>
+<div id="open-bottom-side" class="container-fluid text-center">
+    <button class="btn btn-warning" onclick="openBottomSide()">
+        <i class="fas fa-angle-double-up"></i>
+    </button>
+</div>
+
+
+<!--
+edit modal
+-->
+<div class="modal fade" id="edit-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <section class="modal-header">
+                <h6 class="w-100 mb-0">
+                    ویرایش اطلاعات جدول
+                    <i class="fas fa-times float-left" id="modal-close" data-dismiss="modal"></i>
+                </h6>
+            </section>
+            <section>
+                <form id="modal-form-edit" action="#edit" method="POST">
+                    <section id="form-wrapper">
+
+                    </section>
+                    <div class="text-right">
+                        <a href="#close-modal" class="btn btn-light border mr-2" data-dismiss="modal">
+                            انصراف
+                        </a>
+                        <button class="btn btn-info">
+                            اعمال تغییرات
+                        </button>
+                    </div>
+                </form>
+            </section>
         </div>
     </div>
 </div>
@@ -501,8 +519,10 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
+
     // leftSide
     function openLeftSide() {
+        $("#open-left-side button").fadeOut();
         $("#leftSide").attr("class", "animate__animated animate__fadeInLeft animate__faster");
         $("#leftSide").show();
         $("#screen-black").removeClass("d-none");
@@ -514,10 +534,12 @@
             $("#leftSide").hide(0);
         }, 500);
         $("#screen-black").addClass("d-none");
+        $("#open-left-side button").delay(100).fadeIn();
     }
 
     // rightSide
     function openRightSide() {
+        $("#open-right-side button").fadeOut();
         $("#rightSide").attr("class", "animate__animated animate__fadeInRight animate__faster");
         $("#rightSide").show();
         $("#screen-black").removeClass("d-none");
@@ -529,6 +551,7 @@
             $("#rightSide").hide(0);
         }, 500);
         $("#screen-black").addClass("d-none");
+        $("#open-right-side button").delay(100).fadeIn();
     }
 
     function closeAllSides() {
@@ -541,6 +564,7 @@
     function openBottomSide() {
         $("#bottomSide").attr("class", "animate__animated animate__fadeInUp animate__faster");
         $("#bottomSide").show();
+        $("#screen-black").addClass("bg-tr");
         $("#screen-black").removeClass("d-none");
     }
 
@@ -550,7 +574,66 @@
             $("#bottomSide").hide(0);
         }, 500);
         $("#screen-black").addClass("d-none");
+        $("#screen-black").removeClass("bg-tr");
     }
+
+	// all product names must be here to have better search
+	var allProductNames = [
+		"تیرآهن",
+		"ورقه",
+		...
+	];
+
+    var titrs = [
+        ["type='text'", "نام" , "text-right"],
+        ["type='number' step='0.01'", "قطر" , ""],
+        ["type='text'", "کارخانه" , "text-right"],
+        ["type='number' step='0.01'", "طول" , ""],
+        ["type='number' step='0.01'", "تناژ" , ""],
+        ["type='number' step='0.01'", "تعداد" , ""],
+        ["type='text'", "آلیاژ" , "text-right"],
+        ["type='text'", "انبار" , "text-right"],
+        ["type='text'", "قیمت نقد" , ""],
+        ["type='text'", "قیمت عرف" , ""],
+        ["type='text'", "قیمت مشتری 1" , ""],
+        ["type='text'", "قیمت مشتری 2" , ""],
+        ["type='text'", "قیمت برش خورده" , ""]
+    ];
+
+    function openEditModal(tag) {
+
+        let forms = "";
+        tr = tag.parents("tr");
+        tr.find("td:not(:first-child):not(:last-child)").each(function (i, e) {
+
+            let txt = $(this).text();
+            forms +=
+                "<div class='form-group'>" +
+                "<label class='mb-0 d-block text-right'>" + titrs[i][1] + "</label>" +
+                "<input " + titrs[i][0] + " class='form-control " + titrs[i][2] + " ' value='" + txt + "'  /> " +
+                "</div>";
+        });
+        $("#form-wrapper").html(forms);
+        forms = "";
+        // open modal
+        $('#open-modal-btn').trigger("click");
+    }
+
+    $("#table-main tr td:last-child img").click(function () {
+        let tag = $(this);
+        openEditModal(tag);
+    });
+
+
+    $(window).resize(function () {
+        // if ($(this).width() < 650) {
+        //     $("#table-main tr:nth-child(2)").attr("class", "d-none");
+        
+        // } else {
+        //     $("#table-main tr:nth-child(2)").attr("class", "");
+        // }
+    });
 </script>
 </body>
+
 </html>
