@@ -63,7 +63,7 @@ body {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    --webkit-overflow-scrolling: touch;
 }
 
 #table-main th, td {
@@ -197,6 +197,26 @@ body {
     height: 48px;
     margin: 2px 5px 0;
     color: #ffffff;
+}
+
+#searchMode-box {
+    padding: 8px 12px;
+}
+
+#searchMode-box span {
+    float: right;
+    direction: rtl;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+}
+#searchMode-box i {
+    font-size: 15pt;
+}
+
+.search-style-tr {
+    background-color: #f0f1f5a3 !important;
+    color: #444;
 }
 
 
