@@ -145,6 +145,11 @@ body {
     background-color: #f0f0f0;
 }
 
+.price-blur {
+    color: transparent;
+    text-shadow: 0 0 10px #2f2f2f;
+}
+
 
 #table-main tr:first-child {
     background-color: #457bd6;
@@ -217,6 +222,15 @@ body {
 .search-style-tr {
     background-color: #f0f1f5a3 !important;
     color: #444;
+}
+
+#top-show-price {
+    position: fixed;
+    top: 0px;
+    right: 46%;
+}
+#top-show-price button {
+    border-radius: 0 0 5px 5px;
 }
 
 
