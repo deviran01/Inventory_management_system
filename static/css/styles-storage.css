@@ -250,7 +250,7 @@ body {
     background-color: #f0f0f0;
     max-height: 60%;
     border-radius: 20px 20px 0 0;
-    box-shadow: 0 0 11px 3px #979797a8;
+    box-shadow: 0 0 11px 3px #8a8a8a2e;
     border: 1px solid #e1e1e1;
     border-bottom: 0;
     width: 100%;
@@ -317,11 +317,17 @@ body {
     margin: auto;
 }
 
-.result-box {
-    direction: ltr;
-    margin-bottom: 24px;
+.report .edit-prices {
+    margin-right: 25px;
+    float: right;
+    line-height: 19px;
+    padding: 3px 5px;
+    border-radius: 50%;
+    transition: background-color 500ms; 
 }
-
+.report .edit-prices:hover {
+    background-color: #ececec;
+}
 
 #screen-black {
     z-index: 5;
@@ -412,6 +418,18 @@ body {
     font-size: 14pt;
 }
 
+/* over ride autocomplete css */
+.easy-autocomplete-container ul li div {
+    display: block;
+    font-weight: normal;
+    word-break: break-all;
+    font-size: 12.3pt;
+}
+
+
+
+
+
 /*
     ********************
 */
@@ -446,7 +464,7 @@ body {
     .report-info {
         display: block;
         text-align: right;
-        padding-right: 30px;
+        padding-right: 90px;
     }
 }
 
@@ -482,7 +500,7 @@ body {
     .report-info {
         display: block;
         text-align: right;
-        padding-right: 30px;
+        padding-right: 90px;
     }
 }
 
@@ -518,7 +536,7 @@ body {
     .report-info {
         display: block;
         text-align: right;
-        padding-right: 30px;
+        padding-right: 90px;
     }
 }
 
