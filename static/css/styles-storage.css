@@ -220,7 +220,7 @@ body {
 }
 
 .search-style-tr {
-    background-color: #f0f1f5a3 !important;
+    background-color: #fafafaa3 !important;
     color: #444;
 }
 
@@ -398,14 +398,22 @@ body {
     margin-bottom: 6px;
 }
 
+#edit-prices-modal-closeBtn {
+    cursor: pointer;
+}
 
-
-#edit-modal .modal-header {
+#edit-modal .modal-header
+ , #edit-prices-modal .modal-header {
     padding: 10px 13px;
     background-color: #14b1ca;
     color: #ffffff;
     font-size: 12pt;
     text-align: right;
+}
+
+#edit-prices-modal .form-edit-prices {
+    width: 90%;
+    margin: 20px auto 10px;
 }
 
 #modal-form-edit {
