@@ -297,7 +297,7 @@
             </div>
             <table class="table table-responsive-xl dir-r mb-2" id="table-main">
                 <!--            icon png -->
-                <tr>
+                <tr class="sticky-top">
                     <th>
                     </th>
                     <th>
@@ -634,7 +634,8 @@
     <!--
 controllers
 -->
-    <div id="top-show-price">
+    // TODO : hide blur buttons
+    <div id="top-show-price" class="d-none">
         <button class="btn btn-dark" id="btn-show-price" data-blurstate="on">
             نمایش قیمت ها
         </button>
@@ -910,7 +911,7 @@ controllers
 
         // when page loaded successfully do first tasks
         $(document).ready(function () {
-            blurAllPrice();
+            // blurAllPrice();  // TODO : start func
             tableBackUp();
             saveAliages();
             saveFactorys();
